@@ -211,3 +211,27 @@ type UserTy = {
 function getUser(userId: userId | name): void {
     console.log(userId)
 }
+
+type numberArr = number[];
+
+function getMaxValue(arr: numberArr): number {
+    let max: number = 0;
+
+    arr.forEach(value => {
+        max = value > max ? value : max;
+    })
+
+    return max;
+}
+
+interface EndUser {
+    firstName: string;
+    lastName: string;
+    age: number
+}
+
+type UserArr = EndUser[]
+
+function legalEndUser(user: UserArr): UserArr {
+    return user.filter(user => user["age"] > 18);
+}
